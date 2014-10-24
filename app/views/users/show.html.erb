@@ -1,0 +1,22 @@
+<h1><%= @user.username %>'s Shouts</h1>
+
+<% if signed_in? %>
+  <% if current_user.following?(@user) %>
+    <%= button_to "Unfollow", unfollow_user_path(@user), method: :delete %> 
+  <% else %>
+    <%= button_to "Follow", follow_user_path(@user) %> 
+  <% end %>
+<% end %> 
+
+<h1>Followers</h1>
+<% @followers.each do |follower| %> 
+  <%= link_to follower.username, follower %>
+<% end %>
+
+<h1>Followed Users</h1>
+<% @followed_users.each do |followed_user| %> 
+  <%= link_to follower.username, followed_user %>
+<% end %>
+
+
+<%= render @shouts %> 

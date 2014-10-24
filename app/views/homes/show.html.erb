@@ -1,0 +1,15 @@
+<div id="home">
+  <header>
+    <h1>Welcome to Shoutr</h1>
+    <p>Yoo!! Start Shouting!!</p>
+  </header>
+
+  <div class="home-forms">
+    <div class="home-form">
+      <%= render "sign_in" %>
+    </div>
+    <div class="home-form">
+      <%= render "sign_up", user: @user %>
+    </div>
+  </div>
+</div>
