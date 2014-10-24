@@ -1,3 +1,4 @@
 <%= div_for(shout) do %>
   <%= shout.content%> by <%= link_to shout.user.username, shout.user %> 
+  <%= time_ago_in_words(shout.created_at) %> ago 
 <% end %>

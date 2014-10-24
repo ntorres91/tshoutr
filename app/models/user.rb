@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   has_many :followers, through: :follower_relationships
 
   def timeline
-    Shout.where(user_id: self_and_followed_user_ids).order(created_at: :desc)
+    Shout.where(user_id: self_and_followed_user_ids + followed_user_ids).order(created_at: :desc)
   end
 
   def follow(user)
