@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   root "homes#show"
 
-  resources :shouts, only: [:create]
+  resources :text_shouts, only: [:create]
+  resources :photo_shouts, only: [:create]
+
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :show] do 
     member do 
