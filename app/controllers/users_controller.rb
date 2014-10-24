@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by!(username: params[:id])
-    @shouts = @user.shouts 
+    @shouts = @user.shouts.page(params[:page]).per(2) 
     @followers = @user.followers
     @followed_users = @user.followed_users 
   end 
